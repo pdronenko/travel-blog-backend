@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TrailsModule } from './trails/trails.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig } from './config/typeorm.config';
+import { typeOrmConfig } from './orm-config/typeorm.config';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
