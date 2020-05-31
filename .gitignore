@@ -13,6 +13,7 @@ lerna-debug.log*
 # Config
 config
 Jenkinsfile
+docker-compose.yml
 
 # OS
 .DS_Store
