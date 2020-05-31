@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-sh ./scripts/create-image.sh
-docker-compose -f ./docker-compose.yml up --force-recreate
+sh /home/ubuntu/create-image.sh
+docker-compose -f /home/ubuntu/docker-compose.yml up --force-recreate
