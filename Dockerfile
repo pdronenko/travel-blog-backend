@@ -1,11 +1,13 @@
-FROM node:lts-alpine
+FROM node:lts-alpine AS builder
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 RUN npm install
 COPY . .
-
-EXPOSE 3000
 RUN npm run build
 RUN npm test
+
+FROM node:lts-alpine
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app ./
 CMD [ "npm", "run", "start:prod" ]
