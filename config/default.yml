@@ -4,8 +4,8 @@ server:
 
 db:
   type: 'postgres'
-  port: 54326
-  database: 'trailblog'
+  port: 5432
+  database: 'travel_blog'
 
 jwt:
   expiresIn: 3600

@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  postgres:
+    image: postgres:alpine
+    env_file:
+      - ./dev-db-env.list
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/wellyes/docker-volumes/postgresql:/var/lib/postgresql

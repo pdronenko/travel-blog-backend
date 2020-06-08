@@ -1,0 +1,22 @@
+version: "3.0"
+services:
+  postgres:
+    image: postgres:alpine
+    env_file:
+      - /home/ubuntu/env/db-env.list
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/ubuntu/docker-volumes/postgresql:/var/lib/postgresql
+  travel_blog_api:
+    build:
+      context: .
+    restart: always
+    env_file:
+      - /home/ubuntu/env/api-env.list
+    depends_on:
+      - postgres
+    links:
+      - postgres:postgres
+    ports:
+      - '3000:3000'
