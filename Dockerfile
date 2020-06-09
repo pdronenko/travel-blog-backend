@@ -9,5 +9,5 @@ RUN npm test
 
 FROM node:lts-alpine
 WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app ./
-CMD [ "npm", "run", "start:prod" ]
+COPY --from=builder /usr/src/app/dist ./
+CMD [ "NODE_ENV=production", "node", "./main" ]
