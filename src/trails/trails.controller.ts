@@ -17,7 +17,7 @@ export class TrailsController {
 
   @Get()
   getTrails(@Query(ValidationPipe) filterDto: getTrailsFilterDto): Promise<Trail[]> {
-    this.logger.verbose(`Retrieving all trails. Filters: ${JSON.stringify(filterDto)}`)
+    this.logger.verbose(`Retrieving all trails, filters: ${JSON.stringify(filterDto)}`)
     return this.trailsService.getAllTrails(filterDto);
   }
 
